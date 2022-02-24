@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    height: 100vh;
+    background: linear-gradient(#6899E2, #2ACF9E);
+}
+
+.container {
+    padding: 15px;
+    margin: 0 auto;
+
+    display: block;
+    max-width: 1360px;
+    width: 100%;
+
+    position: relative;
+}
+
+/* ========================================= Logo */
+
+.logo {
+    margin: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 320px;
+    height: 70px;
+
+    color: #2D2D2D;
+    text-align: center;
+    font-size: 36px;
+
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+/* ========================================= Cards */
+.cards {
+    padding: 0 25px 25px;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.cards__inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    min-height: 330px;
+}
+
+.cards__item {
+    margin-top: 25px;
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    background-color: #E2E7FA;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .25);
+
+    position: relative;
+
+    transition: all .2s ease;
+}
+
+.cards__item:not(:nth-child(4n)) {
+    margin-right: 25px;
+}
+
+.cards__title,
+.cards__description {
+    padding: 5px;
+    transition: all .2s ease;
+}
+
+.cards__title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #2D2D2D;
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.cards__description {
+    display: none;
+
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+
+    text-align: center;
+
+    overflow-y: auto;
+}
+
+.cards__item:hover {
+    background-color: #6899E2;
+}
+
+.cards__item:hover .cards__description {
+    display: block;
+}
+
+/* ========================================= Menu */
+
+.menu {
+    margin-bottom: 40px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu > div:first-child {
+    margin-right: 20px;
+}
+
+/* ========================================= Checkbox */
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+    color: #fff;
+}
+
+.checkbox-container > div {
+    margin-left: 10px;
+}
+
+.checkbox-label {
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 44px;
+    background: #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.checkbox-label:after {
+    position: absolute;
+    left: -2px;
+    top: -3px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 100px;
+    background: #2ACF9E;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.05);
+    content: '';
+    transition: all 300ms ease;
+}
+
+.checkbox-label:active:after {
+    transform: scale(1.15, 0.85);
+}
+
+.checkbox-input {
+    display: none;
+}
+
+.checkbox-input:checked ~ label {
+    background: #2ACF9E;
+}
+
+.checkbox-input:checked ~ label:after {
+    left: 20px;
+    background: #2ACF9E;
+}
+
+.checkbox-input:disabled ~ label {
+    pointer-events: none;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: none;
+    opacity: 0;
+}
+
+
+/* ========================================= Button */
+
+.btn {
+    padding: 0;
+    margin: 0;
+
+    width: 155px;
+    height: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    background-color: #fff;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+
+    text-decoration: none;
+    font-size: 18px;
+    color: #2D2D2D;
+
+    transition: all .2s ease;
+}
+
+.btn-primary {
+    border: 1px solid #2D2D2D;
+}
+
+.btn-drag {
+    color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+
+    transition: all .6s ease;
+}
+
+.btn-drag:active {
+    transform: scale(.95);
+}
+
+.btn-drag-on {
+    background-color: #2ACF9E;
+}
+
+.btn-drag-off {
+    background-color: #C1C1C1;
+}
+
+.btn:not(.btn-drag):hover {
+    background-color: #2ACF9E;
+    color: #fff;
+}
+
+/* ========================================= Form */
+
+.form {
+    margin: 100px auto 0;
+    padding: 50px;
+
+    width: 595px;
+    min-height: 490px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #2D2D2D;
+
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.form__title {
+    padding-bottom: 50px;
+
+    color: #2D2D2D;
+
+    font-size: 36px;
+}
+
+.form__control {
+    margin-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+
+.form__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    padding: 10px;
+    min-width: 500px;
+    width: 100%;
+
+    border: 1px solid #2D2D2D;
+    outline: none;
+    border-radius: 10px;
+
+    font-size: 18px;
+    color: #2D2D2D;
+
+    transition: all .2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+}
+
+.label {
+    padding: 1px 15px;
+
+    position: absolute;
+    left: 20px;
+    top: -10px;
+    z-index: 1;
+
+    font-size: 14px;
+    color: #2D2D2D;
+
+    background-color: #fff;
+    border: 1px solid #2D2D2D;
+    border-radius: 20px;
+}
+
+.textarea {
+    padding: 20px;
+
+    max-width: 500px;
+    min-width: 500px;
+    min-height: 180px;
+
+    font-size: 18px;
+
+    outline: none;
+    border-radius: 10px;
+}
+
+/* ========================================= Validate */
+
+.validate {
+    padding: 15px;
+
+    position: absolute;
+    right: -20px;
+    top: 115px;
+
+    width: 390px;
+    height: auto;
+
+    background-color: #fff;
+    border-radius: 20px;
+
+    color: #2D2D2D;
+}
+
+.validate::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    z-index: 1;
+
+    width: 25px;
+    height: 25px;
+
+    background-color: #DA4C4C;
+    border-radius: 50px;
+}
+
+.validate__title {
+    font-size: 24px;
+}
+
+.validate__error {
+    font-size: 18px;
+}
+
+/* ========================================= Modal */
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .60);
+}
+
+.modal__dialog {
+    padding: 40px;
+
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-color: #6899E2;
+    border-radius: 20px;
+}
+
+.modal__title,
+.modal__description {
+    color: #ffffff;
+}
+
+.modal__title {
+    margin-bottom: 30px;
+
+    font-size: 36px;
+}
+
+.modal__buttons {
+    margin-top: auto;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+}
