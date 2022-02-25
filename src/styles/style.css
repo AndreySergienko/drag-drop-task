@@ -19,6 +19,10 @@ body {
     background: linear-gradient(#6899E2, #2ACF9E);
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 .container {
     padding: 15px;
     margin: 0 auto;
